@@ -38,7 +38,7 @@ class GlobalVideo
 		{
 			return SUtil.getStorageDirectory() + getWebm();
 		} else {
-			return SUtil.getStorageDirectory() + getVid();
+			return getVid();
 		}
 	}
 	
