@@ -18,7 +18,7 @@ import openfl.Lib;
 using StringTools;
 
 #if sys
-import sys.FileSystem
+import sys.FileSystem;
 #end
 
 #if cpp
