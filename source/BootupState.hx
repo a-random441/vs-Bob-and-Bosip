@@ -56,7 +56,7 @@ import polymod.Polymod.PolymodError;
 class BootupState extends MusicBeatState
 {
 	public static var loadedStuff:Bool = false;
-	//public var STARTO:VideoPlayer;
+	public var STARTO:WebmPlayerS;
 
 	override public function create():Void
 	{
@@ -131,9 +131,13 @@ class BootupState extends MusicBeatState
 
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/desktop.webm", function() {
-				FlxG.switchState(new DesktopState());
-			}, 2000));
+			STARTO = new WebmPlayerS('assets/videos/desktop.webm');
+			STARTO.finishCallback = () -> {
+				remove(STARTO);
+				LoadingState.loadAndSwitchState(new DesktopState());
+			}
+			add(STARTO);
+			STARTO.play();
 		});
 	}
 
