@@ -8,7 +8,7 @@ import webm.*;
 
 class WebmHandler
 {
-	#if (windows || android)
+	#if !web
 	public var webm:WebmPlayer;
 	public var vidPath:String = "";
 	public var io:WebmIo;
