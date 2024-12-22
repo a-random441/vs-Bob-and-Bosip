@@ -515,7 +515,10 @@ class MainMenuState extends MusicBeatState
 		else
 			controls.setKeyboardScheme(KeyboardScheme.Duo(true), true);
 
-		
+
+		#if mobileC
+                addVirtualPad(UP_DOWN, A_B);
+                #end
 
 		super.create();
 		lock = new FlxSprite().loadGraphic(Paths.image('mainmenu/Lock'));
