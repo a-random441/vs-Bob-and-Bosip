@@ -38,6 +38,8 @@ import lime.app.Application;
 
 #if windows
 import Discord.DiscordClient;
+#end
+#if sys
 import Sys;
 import sys.FileSystem;
 #end
