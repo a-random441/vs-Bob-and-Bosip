@@ -17,7 +17,7 @@ import flixel.util.FlxColor;
 import lime.utils.Assets;
 import flixel.math.FlxPoint;
 import LoadingState.LoadingsState;
-#if windows
+#if sys
 import Sys;
 import sys.FileSystem;
 #end
@@ -994,7 +994,7 @@ class FreeplayState extends MusicBeatState
 				icon.visible = false;
 				if (ex) {
 					if (songs[i].songName.toLowerCase() != 'gameover' || songs[i].songName.toLowerCase() == 'gameover' && FlxG.save.data.playedGO) { 
-						if (FileSystem.exists(Paths.instEXcheck(songs[i].songName.toLowerCase()))) {
+						if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.instEXcheck(songs[i].songName.toLowerCase()))) {
 							grpSongs.add(songText);
 							realLength++;
 							iconArray.push(icon);
@@ -1008,7 +1008,7 @@ class FreeplayState extends MusicBeatState
 					}
 				}
 				
-				if (FileSystem.exists(Paths.instEXcheck(songs[i].songName.toLowerCase())) && presetPos) {
+				if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.instEXcheck(songs[i].songName.toLowerCase())) && presetPos) {
 					if (songs[i].songName.toLowerCase() != 'gameover') {
 						songText.x = oldPositions[i].x;
 						songText.y = oldPositions[i].y;
