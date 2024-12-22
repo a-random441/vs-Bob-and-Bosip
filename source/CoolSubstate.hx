@@ -38,6 +38,9 @@ class CoolSubstate extends MusicBeatSubstate
 		MainMenuState.showRon = true;
 		FreeplayState.curSong = '';
 		FreeplayState.bpm = 95;
+		#if mobileC
+                addVirtualPad(NONE, A);
+                #end
 	}
 	override function update(elapsed:Float)
 	{
