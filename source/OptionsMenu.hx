@@ -117,6 +117,10 @@ class OptionsMenu extends MusicBeatState
 		FlxTween.tween(versionShit,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
 		FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
 
+		#if mobileC
+                addVirtualPad(LEFT_FULL, A_B_C_X_Y);
+                #end
+
 		super.create();
 	}
 
@@ -168,34 +172,34 @@ class OptionsMenu extends MusicBeatState
 				
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
 				{
-					if (FlxG.keys.pressed.SHIFT)
+					if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.justPressed #end)
 						{
-							if (FlxG.keys.pressed.RIGHT)
+							if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
 								currentSelectedCat.getOptions()[curSelected].right();
-							if (FlxG.keys.pressed.LEFT)
+							if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
 								currentSelectedCat.getOptions()[curSelected].left();
 						}
 					else
 					{
-						if (FlxG.keys.justPressed.RIGHT)
+						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
 							currentSelectedCat.getOptions()[curSelected].right();
-						if (FlxG.keys.justPressed.LEFT)
+						if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
 							currentSelectedCat.getOptions()[curSelected].left();
 					}
 				}
 				else
 				{
 
-					if (FlxG.keys.pressed.SHIFT)
+					if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.pressed #end)
 					{
-						if (FlxG.keys.justPressed.RIGHT)
+						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
 							FlxG.save.data.offset += 0.1;
-						else if (FlxG.keys.justPressed.LEFT)
+						else if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
 							FlxG.save.data.offset -= 0.1;
 					}
-					else if (FlxG.keys.pressed.RIGHT)
+					else if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.pressed.LEFT)
+					else if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
 						FlxG.save.data.offset -= 0.1;
 					
 				
@@ -207,21 +211,21 @@ class OptionsMenu extends MusicBeatState
 			}
 			else
 			{
-				if (FlxG.keys.pressed.SHIFT)
+				if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.pressed #end)
 					{
-						if (FlxG.keys.justPressed.RIGHT)
+						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
 							FlxG.save.data.offset += 0.1;
-						else if (FlxG.keys.justPressed.LEFT)
+						else if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
 							FlxG.save.data.offset -= 0.1;
 					}
-					else if (FlxG.keys.pressed.RIGHT)
+					else if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.pressed.LEFT)
+					else if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
 						FlxG.save.data.offset -= 0.1;
 			}
 		
 
-			if (controls.RESET)
+			if (controls.RESET #if mobileC || virtualPad.buttonC.justPressed #end)
 					FlxG.save.data.offset = 0;
 
 			if (controls.ACCEPT)
