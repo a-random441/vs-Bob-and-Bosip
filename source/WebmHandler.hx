@@ -2,13 +2,13 @@ package;
 
 import flixel.FlxG;
 import openfl.display.Sprite;
-#if cpp
+#if (windows || android)
 import webm.*;
 #end
 
 class WebmHandler
 {
-	#if cpp
+	#if (windows || android)
 	public var webm:WebmPlayer;
 	public var vidPath:String = "";
 	public var io:WebmIo;
@@ -166,7 +166,7 @@ class WebmHandler
 	{
 		webm.visible = true;
 	}
-	#else
+	#elseif (macos || linux)
 	public var webm:Sprite;
 	public function new()
 	{
