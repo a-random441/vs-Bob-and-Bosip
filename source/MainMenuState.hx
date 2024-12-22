@@ -27,6 +27,8 @@ import flixel.math.FlxMath;
 
 #if windows
 import Discord.DiscordClient;
+#end
+#if sys
 import sys.FileSystem;
 #end
 
