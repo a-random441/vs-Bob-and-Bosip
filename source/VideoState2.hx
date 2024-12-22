@@ -17,6 +17,10 @@ import openfl.Lib;
 
 using StringTools;
 
+#if sys
+import sys.FileSystem
+#end
+
 #if cpp
 import webm.WebmPlayer;
 #end
@@ -91,7 +95,11 @@ class VideoState2 extends MusicBeatState
 
 		if (GlobalVideo.isWebm)
 		{
+			#if !sys
 			if (Assets.exists(leSource.replace(".webm", ".ogg"), MUSIC) || Assets.exists(leSource.replace(".webm", ".ogg"), SOUND))
+			#elseif sys
+			if (FileSystem.exists(SUtil.getStorageDirectory() + leSource.replace(".webm", ".ogg"), MUSIC) || FileSystem.exists(SUtil.getStorageDirectory() + leSource.replace(".webm", ".ogg"), SOUND))
+			#end
 			{
 				useSound = true;
 				vidSound = FlxG.sound.play(leSource.replace(".webm", ".ogg"));
