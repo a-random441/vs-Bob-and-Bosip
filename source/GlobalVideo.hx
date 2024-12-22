@@ -18,7 +18,7 @@ class GlobalVideo
 	
 	public static function getVid():VideoHandler
 	{
-		return video;
+		return SUtil.getStorageDirectory() + video;
 	}
 	
 	public static function setWebm(vid:WebmHandler):Void
@@ -29,16 +29,16 @@ class GlobalVideo
 	
 	public static function getWebm():WebmHandler
 	{
-		return webm;
+		return SUtil.getStorageDirectory() + webm;
 	}
 	
 	public static function get():Dynamic
 	{
 		if (isWebm)
 		{
-			return getWebm();
+			return SUtil.getStorageDirectory() +  getWebm();
 		} else {
-			return getVid();
+			return SUtil.getStorageDirectory() +  getVid();
 		}
 	}
 	
