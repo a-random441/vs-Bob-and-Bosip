@@ -18,7 +18,7 @@ import openfl.geom.Point;
 import LoadingState.LoadingsState;
 import flixel.addons.transition.FlxTransitionableState;
 
-#if windows
+#if sys
 import Sys;
 import sys.FileSystem;
 #end
@@ -62,12 +62,12 @@ class DifficultySelectSubstate extends MusicBeatSubstate
 		add(bg);
 
 		
-		if (FileSystem.exists(Paths.instcheck(song))) 
+		if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.instcheck(song))) 
 			hasRegular = true;
 
 		
 		
-		if (FileSystem.exists(Paths.instEXcheck(song))) 
+		if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.instEXcheck(song))) 
 			hasEX = true;
 
 		trace(hasRegular);
