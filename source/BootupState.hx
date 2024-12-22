@@ -76,8 +76,8 @@ class BootupState extends MusicBeatState
 		#end*/
 		
 		#if sys
-		if (!sys.FileSystem.exists(Sys.getCwd() + "/assets/replays"))
-			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
+		if (!sys.FileSystem.exists(#if mobile SUtil.getStorageDirectory() + #else Sys.getCwd() + #end "/assets/replays"))
+			sys.FileSystem.createDirectory(#if mobile SUtil.getStorageDirectory() + #else Sys.getCwd() + #end "/assets/replays");
 		#end
 
 		@:privateAccess
@@ -118,7 +118,7 @@ class BootupState extends MusicBeatState
 			}
 			if (!loadedStuff) {
 				FlxG.sound.cache(Paths.inst(songHighscore));
-				if (FileSystem.exists(Paths.instEXcheck(songHighscore))) {
+				if (FileSystem.exists(SUtil.getStorageDirectory() + Paths.instEXcheck(songHighscore))) {
 					FlxG.sound.cache(Paths.instEX(songHighscore));
 				}
 			}
