@@ -56,7 +56,7 @@ import polymod.Polymod.PolymodError;
 class BootupState extends MusicBeatState
 {
 	public static var loadedStuff:Bool = false;
-	public var STARTO:WebmPlayerS;
+	public var STARTO:VideoPlayer;
 
 	override public function create():Void
 	{
