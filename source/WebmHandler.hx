@@ -166,4 +166,5 @@ class WebmHandler
 	{
 		webm.visible = true;
 	}
+	#end
 }
