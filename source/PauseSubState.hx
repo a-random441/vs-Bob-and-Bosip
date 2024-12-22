@@ -95,6 +95,11 @@ class PauseSubState extends MusicBeatSubstate
 			grpMenuShit.add(songText);
 		}
 
+		#if mobileC
+                addVirtualPad(LEFT_FULL, A_B);
+		addVirtualPadCamera();
+                #end
+
 		changeSelection();
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
