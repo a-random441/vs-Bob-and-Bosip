@@ -2,13 +2,13 @@ package;
 
 import flixel.FlxG;
 import openfl.display.Sprite;
-#if desktop
+#if extension-webm
 import webm.*;
 #end
 
 class WebmHandler
 {
-	#if desktop
+	#if extension-webm
 	public var webm:WebmPlayer;
 	public var vidPath:String = "";
 	public var io:WebmIo;
