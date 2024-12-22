@@ -68,7 +68,11 @@ class Replay
         var data:String = Json.stringify(json);
 
         #if sys
+	#if desktop
         File.saveContent("assets/replays/replay-" + PlayState.SONG.song + "-time" + Date.now().getTime() + ".kadeReplay", data);
+	#elseif android
+	SUtil.saveContent("assets/replays/replay-" + PlayState.SONG.song + "-time" + Date.now().getTime() + ".kadeReplay", data);
+	#end
         #end
     }
 
@@ -78,7 +82,7 @@ class Replay
         trace('loading ' + Sys.getCwd() + 'assets/replays/' + path + ' replay...');
         try
         {
-            var repl:ReplayJSON = cast Json.parse(File.getContent(Sys.getCwd() + "assets/replays/" + path));
+            var repl:ReplayJSON = cast Json.parse(File.getContent(#if !mobile Sys.getCwd() + #else SUtil.getStorageDirectory() + #end "assets/replays/" + path));
             replay = repl;
         }
         catch(e)
