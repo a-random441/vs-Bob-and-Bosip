@@ -255,6 +255,10 @@ class MusicPlayerSubstate extends MusicBeatSubstate
 
 			changeSelection();
 		},});
+
+		#if mobileC
+                addVirtualPad(NONE, B);
+                #end
 	}
 	override function update(elapsed:Float)
 	{
