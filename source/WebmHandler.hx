@@ -166,11 +166,4 @@ class WebmHandler
 	{
 		webm.visible = true;
 	}
-	#elseif (macos || linux)
-	public var webm:Sprite;
-	public function new()
-	{
-	trace("THIS IS ANDROID! or some shit...");
-	}
-	#end
 }
