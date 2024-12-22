@@ -492,8 +492,10 @@ class CreditState extends MusicBeatState
 			curCat = 0;
 			changeCat(0, true, true);
 		});
-		
 
+		#if mobileC
+                addVirtualPad(LEFT_FULL, B);
+                #end	
 	}
 
 	function changeDev() {
