@@ -42,6 +42,8 @@ class Main extends Sprite
 	{
 		super();
 
+		SUtil.uncaughtErrorHandler();
+
 		if (stage != null)
 		{
 			init();
@@ -80,6 +82,8 @@ class Main extends Sprite
 		initialState = TitleState;
 		#end*/
 
+		SUtil.checkFiles();
+
 		game = new FlxGame(gameWidth, gameHeight, initialState, zoom, framerate, framerate, skipSplash, startFullscreen);
 
 		addChild(game);
@@ -108,16 +112,15 @@ class Main extends Sprite
 		GlobalVideo.setWebm(webmHandle);
 		#end
 
-		#if !mobile
 		addChild(new FPS(10, 3, 0xFFFFFF));
-		#end
 
-		#if !mobile
+		#if android
+                FlxG.android.preventDefaultKeys = [BACK];
+                #end
+			
 		fpsCounter = new FPS(10, 3, 0xFFFFFF);
 		addChild(fpsCounter);
 		toggleFPS(FlxG.save.data.fps);
-
-		#end
 	}
 
 	var game:FlxGame;
