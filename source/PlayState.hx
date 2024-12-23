@@ -5762,7 +5762,7 @@ class PlayState extends MusicBeatState
 							var webainside = new WebmPlayerS("assets/videos/Bobal.webm");
 							webainside.endcallback = () -> {
 							remove(webaplayer);
-							LoadingState.loadAndSwitchState(new MainMenuState()));
+							LoadingState.loadAndSwitchState(new MainMenuState());
 							}
 							add(webainside);
 							webainside.play();
