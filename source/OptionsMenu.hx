@@ -121,6 +121,12 @@ class OptionsMenu extends MusicBeatState
                 addVirtualPad(LEFT_FULL, A_B_C_X_Y);
                 #end
 
+		var tipText:FlxText = new FlxText(10, 14, 0, 'Press C to customize your android controls', 16);
+tipText.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+tipText.borderSize = 2.4;
+tipText.scrollFactor.set();
+add(tipText);
+
 		super.create();
 	}
 
@@ -130,6 +136,15 @@ class OptionsMenu extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		#if android
+if (virtualPad.buttonC.justPressed) {
+	#if android
+	removeVirtualPad();
+	#end
+	openSubState(new mobile.MobileControlsSubsState());
+}
+#end
 
 		if (acceptInput)
 		{
@@ -166,6 +181,8 @@ class OptionsMenu extends MusicBeatState
 				changeSelection(-1);
 			if (controls.DOWN_P)
 				changeSelection(1);
+
+			
 			
 			if (isCat)
 			{
