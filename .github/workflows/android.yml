@@ -13,9 +13,6 @@ jobs:
     name: buildAndroid
     # The type of runner that the job will run on
     runs-on: ubuntu-24.04
-    strategy:
-      matrix:
-        flag: [ONLY_ARMV7, ONLY_ARM64, UNIVERSAL]
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -81,10 +78,10 @@ jobs:
           haxelib run lime rebuild hxcpp
       # Compiles Build via Lime
       - name: Compile
-        run: haxelib run lime build android -D ${{matrix.flag}}
+        run: haxelib run lime build android
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: androidBuild-${{matrix.flag}}
+          name: androidBuild
           path: export/release/android/bin/app/build/outputs/apk/debug
           
