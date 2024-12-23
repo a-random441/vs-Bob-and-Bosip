@@ -105,7 +105,7 @@ class WebmPlayerS extends FlxSprite
         
         if (frameSkipLimit != -1)
 		{
-			videoplayer.SKIP_STEP_LIMIT = frameSkipLimit;	
+			//videoplayer.SKIP_STEP_LIMIT = frameSkipLimit;	
 		}
 		
 		if (ownCamera) {
@@ -234,7 +234,7 @@ class Dimensions
 class AndroidThing
 {
 	#if android
-	static var path:String = lime.system.System.applicationStorageDirectory;
+	static var path:String = SUtil.getStorageDirectory();
 	#end
 
 	public static function getPath(id:String)
