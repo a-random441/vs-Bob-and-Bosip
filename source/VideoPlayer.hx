@@ -18,6 +18,7 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.util.FlxPath;
 import GlobalVideo;
+import openfl.util.Assets as OpenFlAssets;
 
 /**-200 -200
 	usage:
@@ -56,7 +57,7 @@ class VideoPlayer extends FlxSprite {
 
 		pathfile = path;
 
-		var path = Paths.getPath(Paths.file(path), ".webm");
+		var path = OpenFlAssets.getPath(Paths.file(path), ".webm");
 
 		videoFrames = Std.parseInt(Assets.getText(Paths.file(pathfile.replace(".webm", ".txt"))));
 
