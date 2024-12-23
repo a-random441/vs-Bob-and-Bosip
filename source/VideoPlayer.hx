@@ -7,7 +7,7 @@ import openfl.Assets;
 import openfl.media.Sound;
 import flixel.FlxSprite;
 import webm.*;
-//import Asset2File;
+import Asset2File;
 #if sys
 import webm.WebmPlayer;
 import sys.FileSystem;
@@ -58,7 +58,7 @@ class VideoPlayer extends FlxSprite {
 
 		pathfile = path;
 
-		var path = FileSystem.fullPath(SUtil.getStorageDirectory() + Paths.file(path), ".webm");
+		var path = Asset2File.getPath(Paths.file(path), ".webm");
 
 		videoFrames = Std.parseInt(Assets.getText(Paths.file(pathfile.replace(".webm", ".txt"))));
 
