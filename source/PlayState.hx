@@ -2407,7 +2407,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/Cutscene1Subtitles.webm", new PlayState()));
+						LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene1Subtitles.webm", new PlayState()));
 						FlxG.log.add('FUCKKKKK');
 						playCutscene = false;
 					} else {
@@ -2419,7 +2419,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/ITB/Subtitles ITB-1.webm", new PlayState()));
+						LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-1.webm", new PlayState()));
 						playCutscene = false;
 					} else {
 						camHUD.visible = true;
@@ -2430,7 +2430,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-						LoadingState.loadAndSwitchState(new VideoState("assets/videos/bob takeover/Subtitles-Onslaught-1.webm", new PlayState()));
+						LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-1.webm", new PlayState()));
 						playCutscene = false;
 					} else {
 						camHUD.visible = true;
@@ -5735,7 +5735,7 @@ class PlayState extends MusicBeatState
 						case 'split':
 							FlxTransitionableState.skipNextTransIn = true;
 							FlxTransitionableState.skipNextTransOut = true;
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/Cutscene4Subtitles-credits.webm", new VideoState("assets/videos/Bobal.webm", new MainMenuState())));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene4Subtitles-credits.webm", new WebmPlayerS("assets/videos/Bobal.webm", new MainMenuState())));
 							if (FlxG.save.data.beatWeek == null || FlxG.save.data.beatWeek == false) {
 								MainMenuState.firsttimeBob = true;
 								FlxG.save.data.beatWeek = true;
@@ -5744,7 +5744,7 @@ class PlayState extends MusicBeatState
 						case 'intertwined':
 							FlxTransitionableState.skipNextTransIn = true;
 							FlxTransitionableState.skipNextTransOut = true;
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/ITB/Subtitles ITB-5.webm", new MainMenuState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-5.webm", new MainMenuState()));
 							if (FlxG.save.data.beatITB == null || FlxG.save.data.beatITB == false) {
 								MainMenuState.firsttimeITB = true;
 								FlxG.save.data.beatITB = true;
@@ -5821,17 +5821,17 @@ class PlayState extends MusicBeatState
 					FlxG.sound.music.stop();
 					switch (nextSongLowercase) {
 						case 'swing':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/Cutscene2Subtitles.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene2Subtitles.webm", new PlayState()));
 						case 'split':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/Cutscene3Subtitles.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene3Subtitles.webm", new PlayState()));
 						case 'conscience':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/ITB/Subtitles ITB-2.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-2.webm", new PlayState()));
 						case 'yap squad':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/ITB/Subtitles ITB-3.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-3.webm", new PlayState()));
 						case 'intertwined':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/ITB/Subtitles ITB-4.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-4.webm", new PlayState()));
 						case 'jump-out':
-							LoadingState.loadAndSwitchState(new VideoState("assets/videos/bob takeover/Subtitles-Onslaught-2.webm", new PlayState()));
+							LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-2.webm", new PlayState()));
 						default:
 							LoadingState.loadAndSwitchState(new PlayState());
 					}
