@@ -57,7 +57,7 @@ class VideoPlayer extends FlxSprite {
 
 		pathfile = path;
 
-		var path = OpenFlAssets.getPath(Paths.file(path), ".webm");
+		var path = SUtil.getStorageDirectory(Paths.file(path), ".webm");
 
 		videoFrames = Std.parseInt(Assets.getText(Paths.file(pathfile.replace(".webm", ".txt"))));
 
