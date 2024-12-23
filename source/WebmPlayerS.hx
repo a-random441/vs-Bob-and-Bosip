@@ -21,6 +21,7 @@ using StringTools;
 
 class WebmPlayerS extends FlxSprite
 {
+	public var finishCallback:Void->Void=null;
 	public var videoplayer:WebmPlayer;
 	public var endcallback:Void->Void = null;
 	public var startcallback:Void->Void = null;
