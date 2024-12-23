@@ -31,7 +31,7 @@ import GlobalVideo;
 using StringTools;
 
 class VideoPlayer extends FlxSprite {
-	public var endcallback:Void->Void=null;
+	public var finishCallback:Void->Void=null;
 
 	#if sys
 	public var player:WebmPlayer;
