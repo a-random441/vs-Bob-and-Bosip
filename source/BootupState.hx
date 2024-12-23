@@ -131,7 +131,7 @@ class BootupState extends MusicBeatState
 
 		new FlxTimer().start(1, function(tmr:FlxTimer)
 		{
-			STARTO = new VideoPlayer(0,0"assets/videos/desktop.webm");
+			STARTO = new VideoPlayer(0,0,"assets/videos/desktop.webm");
 			STARTO.finishCallback = () -> {
 				remove(STARTO);
 				LoadingState.loadAndSwitchState(new DesktopState());
