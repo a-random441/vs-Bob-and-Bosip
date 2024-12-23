@@ -1661,12 +1661,10 @@ class Character extends FlxSprite
 	{
 		if (!curCharacter.startsWith('bf') || menuMode)
 		{
-			#if desktop
 			if (animation.curAnim.name.startsWith('sing') || animation.curAnim.name.startsWith('haha'))
 			{
-				holdTimer += elapsed;
+				//holdTimer += elapsed;
 			}
-			#end
 
 			var dadVar:Float = 4;
 
