@@ -18,7 +18,7 @@ import flixel.FlxSprite;
 import flixel.FlxG;
 import flixel.util.FlxPath;
 import GlobalVideo;
-import openfl.util.Assets as OpenFlAssets;
+import openfl.utils.Assets as OpenFlAssets;
 
 /**-200 -200
 	usage:
