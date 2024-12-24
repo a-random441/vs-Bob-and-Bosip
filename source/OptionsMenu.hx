@@ -117,16 +117,6 @@ class OptionsMenu extends MusicBeatState
 		FlxTween.tween(versionShit,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
 		FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
 
-		#if mobileC
-                addVirtualPad(LEFT_FULL, A_B_C_X_Y);
-                #end
-
-		var tipText:FlxText = new FlxText(10, 14, 0, 'Press C to customize your android controls', 16);
-tipText.setFormat(Paths.font('vcr.ttf'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-tipText.borderSize = 2.4;
-tipText.scrollFactor.set();
-add(tipText);
-
 		super.create();
 	}
 
@@ -136,15 +126,6 @@ add(tipText);
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-
-		#if android
-if (virtualPad.buttonC.justPressed) {
-	#if android
-	removeVirtualPad();
-	#end
-	openSubState(new mobile.MobileControlsSubState());
-}
-#end
 
 		if (acceptInput)
 		{
@@ -181,42 +162,40 @@ if (virtualPad.buttonC.justPressed) {
 				changeSelection(-1);
 			if (controls.DOWN_P)
 				changeSelection(1);
-
-			
 			
 			if (isCat)
 			{
 				
 				if (currentSelectedCat.getOptions()[curSelected].getAccept())
 				{
-					if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.justPressed #end)
+					if (FlxG.keys.pressed.SHIFT)
 						{
-							if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
+							if (FlxG.keys.pressed.RIGHT)
 								currentSelectedCat.getOptions()[curSelected].right();
-							if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
+							if (FlxG.keys.pressed.LEFT)
 								currentSelectedCat.getOptions()[curSelected].left();
 						}
 					else
 					{
-						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
+						if (FlxG.keys.justPressed.RIGHT)
 							currentSelectedCat.getOptions()[curSelected].right();
-						if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
+						if (FlxG.keys.justPressed.LEFT)
 							currentSelectedCat.getOptions()[curSelected].left();
 					}
 				}
 				else
 				{
 
-					if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.pressed #end)
+					if (FlxG.keys.pressed.SHIFT)
 					{
-						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
+						if (FlxG.keys.justPressed.RIGHT)
 							FlxG.save.data.offset += 0.1;
-						else if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
+						else if (FlxG.keys.justPressed.LEFT)
 							FlxG.save.data.offset -= 0.1;
 					}
-					else if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
+					else if (FlxG.keys.pressed.RIGHT)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
+					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 					
 				
@@ -228,21 +207,21 @@ if (virtualPad.buttonC.justPressed) {
 			}
 			else
 			{
-				if (FlxG.keys.pressed.SHIFT #if mobileC || virtualPad.buttonX.pressed #end)
+				if (FlxG.keys.pressed.SHIFT)
 					{
-						if (FlxG.keys.justPressed.RIGHT #if mobileC || virtualPad.buttonRight.justPressed #end)
+						if (FlxG.keys.justPressed.RIGHT)
 							FlxG.save.data.offset += 0.1;
-						else if (FlxG.keys.justPressed.LEFT #if mobileC || virtualPad.buttonLeft.justPressed #end)
+						else if (FlxG.keys.justPressed.LEFT)
 							FlxG.save.data.offset -= 0.1;
 					}
-					else if (FlxG.keys.pressed.RIGHT #if mobileC || virtualPad.buttonRight.pressed #end)
+					else if (FlxG.keys.pressed.RIGHT)
 						FlxG.save.data.offset += 0.1;
-					else if (FlxG.keys.pressed.LEFT #if mobileC || virtualPad.buttonLeft.pressed #end)
+					else if (FlxG.keys.pressed.LEFT)
 						FlxG.save.data.offset -= 0.1;
 			}
 		
 
-			if (controls.RESET #if mobileC || virtualPad.buttonC.justPressed #end)
+			if (controls.RESET)
 					FlxG.save.data.offset = 0;
 
 			if (controls.ACCEPT)
