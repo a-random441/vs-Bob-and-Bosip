@@ -895,8 +895,8 @@ class MainMenuState extends MusicBeatState
 		if (curBeat % 4 == 0 && lerpCamera)
 			FlxG.camera.zoom = 1.015;
 		
-		if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
-			character.dance();
+		//if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
+			//character.dance();
 
 		if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
 			character.dance();
