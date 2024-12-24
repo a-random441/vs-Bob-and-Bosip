@@ -3607,13 +3607,13 @@ class PlayState extends MusicBeatState
 		}
 
 		if (filteron && !FlxG.save.data.lowDetail){
-			ShadersHandler.setRadialBlur(640+(FlxG.random.int(-10,10)),360+(FlxG.random.int(-10,10)),FlxG.random.float(0.001,0.005));
+			//ShadersHandler.setRadialBlur(640+(FlxG.random.int(-10,10)),360+(FlxG.random.int(-10,10)),FlxG.random.float(0.001,0.005));
 			ch = FlxG.random.int(1,5) / 900;
 			ch = FlxG.random.int(1,5) / 1000;
-			ShadersHandler.setChrome(ch);
+			//ShadersHandler.setChrome(ch);
 		}else{
-			ShadersHandler.setChrome(0);
-			ShadersHandler.setRadialBlur(0,0,0);
+			//ShadersHandler.setChrome(0);
+			//ShadersHandler.setRadialBlur(0,0,0);
 		}
 
 		scoreTxt.text = Ratings.CalculateRanking(songScore,songScoreDef,nps,maxNPS,accuracy);
@@ -4830,7 +4830,7 @@ class PlayState extends MusicBeatState
 										}	
 									case 'ronald mcdonald slide':
 									if(!FlxG.save.data.lowDetail){
-										var elShader = new PixelateShader();
+										/*var elShader = new PixelateShader();
 										#if (openfl >= "8.0.0")
 										elShader.data.uBlocksize.value = [5, 5];
 										#else
@@ -4845,8 +4845,9 @@ class PlayState extends MusicBeatState
 										#else
 										bgShader.uBlocksize = [10, 10];
 										#end
+                                                                                */
 										for (i in grpDieStage)
-											i.shader = bgShader;
+											//i.shader = bgShader;
 
 										unregisteredHypercam.visible = true;
 									}
@@ -4954,11 +4955,11 @@ class PlayState extends MusicBeatState
 										unregisteredHypercam.visible = false;
 
 										for (i in grpDieStage)
-											i.shader = null;
+											//i.shader = null;
 
-										dad.shader = null;
-										boyfriend.shader = null;
-										gf.shader = null;
+										//dad.shader = null;
+										//boyfriend.shader = null;
+										//gf.shader = null;
 
 										if (dad.curCharacter != 'ronsip') {
 											remove(dad);
@@ -5069,7 +5070,7 @@ class PlayState extends MusicBeatState
 													//camtween.cancel();
 											}
 											filteron = false;
-											filters.remove(ShadersHandler.scanline);
+											//filters.remove(ShadersHandler.scanline);
 										}
 										
 									default:
@@ -5115,7 +5116,7 @@ class PlayState extends MusicBeatState
 										backgroundVideo("assets/videos/TV static noise HD 1080p.webm");
 										}
 										else if(!FlxG.save.data.lowDetail) {
-											filters.push(ShadersHandler.scanline);
+											//filters.push(ShadersHandler.scanline);
 											filteron = true;
 										}
 								}
@@ -7338,9 +7339,9 @@ class PlayState extends MusicBeatState
 		}
 		if (curBeat > 0 && !shadersLoaded)
 			{
-				shadersLoaded = true;
-				filters.push(ShadersHandler.chromaticAberration);
-				filters.push(ShadersHandler.radialBlur);
+				//shadersLoaded = true;
+				//filters.push(ShadersHandler.chromaticAberration);
+				//filters.push(ShadersHandler.radialBlur);
 			}
 		if (!FlxG.save.data.lowDetail) {
 			switch (SONG.song.toLowerCase()) {
