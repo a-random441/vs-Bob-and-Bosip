@@ -7422,7 +7422,7 @@ class PlayState extends MusicBeatState
 						mini.animation.play('idle', true);
 						mordecai.animation.play('idle', true);
 					case 'conscience':
-						mordecai.animation.play('idle', true);
+						//mordecai.animation.play('idle', true);
 				}
 			}
 
@@ -7431,11 +7431,11 @@ class PlayState extends MusicBeatState
 			}
 			if (curStage == 'sans') {
 				mini.animation.play('idle', true);
-				mordecai.animation.play('idle', true);
+				//mordecai.animation.play('idle', true);
 			}
 			if (curStage == 'sunset') {
 				mini.animation.play('idle', true);
-				mordecai.animation.play('idle', true);
+				//mordecai.animation.play('idle', true);
 			}
 			if (curStage == 'day') {
 				mini.animation.play('idle', true);
