@@ -898,8 +898,9 @@ class MainMenuState extends MusicBeatState
 		//if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
 			//character.dance();
 
-		if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
+		/*if (!character.animation.curAnim.name.startsWith('sing') && character.animation.curAnim.name != 'haha')
 			character.dance();
+*/
 		if (useCharacter2) {
 			if (!character2.animation.curAnim.name.startsWith('sing') && character2.animation.curAnim.name != 'haha')
 				character2.dance();
