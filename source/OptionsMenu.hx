@@ -142,7 +142,7 @@ if (virtualPad.buttonC.justPressed) {
 	#if android
 	removeVirtualPad();
 	#end
-	openSubState(new mobile.MobileControlsSubsState());
+	openSubState(new mobile.MobileControlsSubState());
 }
 #end
 
