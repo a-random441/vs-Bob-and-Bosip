@@ -191,7 +191,7 @@ class OptionsSubState extends MusicBeatSubstate
 		},});
 								   
 		#if mobileC					   
-                addVirtualPad(LEFT_FULL, A_B_X_Y);
+                addVirtualPad(LEFT_FULL, A_B_C_X_Y);
                 #end
 
 	}
@@ -199,6 +199,11 @@ class OptionsSubState extends MusicBeatSubstate
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		#if mobileC
+			if(virtualPad.buttonC.justPressed){
+				openSubState(new mobile.MobileControlsSubState());
+			}
+		#end
 		if (acceptInput)
 		{
 			if (isCat)
