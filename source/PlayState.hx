@@ -2407,7 +2407,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-					        var webmplayer1 = new WebmPlayerS("assets/videos/Cutscene1Subtitles.webm");
+					        var webmplayer1 = new WebmPlayerS("assets/videos/Cutscene1Subtitles.webm", true);
 						//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene1Subtitles.webm", new PlayState()));
 					        webmplayer1.endcallback = () -> {
 					                remove(webmplayer1);
@@ -2426,7 +2426,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-						var webmplayer2 = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-1.webm");
+						var webmplayer2 = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-1.webm", true);
 						webmplayer2.endcallback = () -> {
 							remove(webmplayer2);
 							LoadingState.loadAndSwitchState(new PlayState());
@@ -2444,7 +2444,7 @@ class PlayState extends MusicBeatState
 					if (playCutscene) {
 						FlxTransitionableState.skipNextTransIn = false;
 						FlxTransitionableState.skipNextTransOut = false;
-						var webmplayer3 = new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-1.webm");
+						var webmplayer3 = new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-1.webm", true);
 						webmplayer3.endcallback = () -> {
 							remove(webmplayer3);
 							LoadingState.loadAndSwitchState(new PlayState());
@@ -5757,10 +5757,10 @@ class PlayState extends MusicBeatState
 						case 'split':
 							FlxTransitionableState.skipNextTransIn = true;
 							FlxTransitionableState.skipNextTransOut = true;
-							var webaplayer = new WebmPlayerS("assets/videos/Cutscene4Subtitles-credits.webm");
+							var webaplayer = new WebmPlayerS("assets/videos/Cutscene4Subtitles-credits.webm", true);
 							webaplayer.endcallback = () -> {
 							remove(webaplayer);
-							var webainside = new WebmPlayerS("assets/videos/Bobal.webm");
+							var webainside = new WebmPlayerS("assets/videos/Bobal.webm", true);
 							webainside.endcallback = () -> {
 							remove(webaplayer);
 							LoadingState.loadAndSwitchState(new MainMenuState());
@@ -5779,7 +5779,7 @@ class PlayState extends MusicBeatState
 						case 'intertwined':
 							FlxTransitionableState.skipNextTransIn = true;
 							FlxTransitionableState.skipNextTransOut = true;
-							var idkplayer = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-5.webm");
+							var idkplayer = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-5.webm", true);
 							idkplayer.endcallback = () -> {
 								remove(idkplayer);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5863,7 +5863,7 @@ class PlayState extends MusicBeatState
 					FlxG.sound.music.stop();
 					switch (nextSongLowercase) {
 						case 'swing':
-							var one = new WebmPlayerS("assets/videos/Cutscene2Subtitles.webm");
+							var one = new WebmPlayerS("assets/videos/Cutscene2Subtitles.webm", true);
 							one.endcallback = () -> {
 								remove(one);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5872,7 +5872,7 @@ class PlayState extends MusicBeatState
 			                                one.play();
 							//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene2Subtitles.webm", new PlayState()));
 						case 'split':
-							var three = new WebmPlayerS("assets/videos/Cutscene3Subtitles.webm");
+							var three = new WebmPlayerS("assets/videos/Cutscene3Subtitles.webm", true);
 							three.endcallback = () -> {
 								remove(three);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5881,7 +5881,7 @@ class PlayState extends MusicBeatState
 			                                three.play();
 							//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/Cutscene3Subtitles.webm", new PlayState()));
 						case 'conscience':
-							var four = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-2.webm");
+							var four = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-2.webm", true);
 							four.endcallback = () -> {
 								remove(four);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5890,7 +5890,7 @@ class PlayState extends MusicBeatState
 			                                four.play();
 							//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-2.webm", new PlayState()));
 						case 'yap squad':
-							var five = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-3.webm");
+							var five = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-3.webm", true);
 							five.endcallback = () -> {
 								remove(five);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5899,7 +5899,7 @@ class PlayState extends MusicBeatState
 			                                five.play();
 							//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-3.webm", new PlayState()));
 						case 'intertwined':
-							var six = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-4.webm");
+							var six = new WebmPlayerS("assets/videos/ITB/Subtitles ITB-4.webm", true);
 							six.endcallback = () -> {
 								remove(six);
 							        LoadingState.loadAndSwitchState(new PlayState());
@@ -5908,7 +5908,7 @@ class PlayState extends MusicBeatState
 			                                six.play();
 							//LoadingState.loadAndSwitchState(new WebmPlayerS("assets/videos/ITB/Subtitles ITB-4.webm", new PlayState()));
 						case 'jump-out':
-							var seven = new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-2.webm");
+							var seven = new WebmPlayerS("assets/videos/bob takeover/Subtitles-Onslaught-2.webm", true);
 							seven.endcallback = () -> {
 								remove(seven);
 							        LoadingState.loadAndSwitchState(new PlayState());
